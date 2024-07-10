@@ -10,7 +10,7 @@ class Women(models.Model):
     time_create = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
     is_published = models.BooleanField(default=True, verbose_name='Публицкация')
-    cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория')
+    cat = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Категория'  )
 
     def __str__(self):
         return self.title
@@ -21,7 +21,7 @@ class Women(models.Model):
     class Meta:
         verbose_name = 'Известные женщины'
         verbose_name_plural= 'Известные женщины'
-        ordering = ['-time_create', 'title']
+        #ordering = ['-time_create', 'title']
 
 
 class Category(models.Model):
